@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Coins, Calendar, PieChart, Info, AlertTriangle, BookOpen, Clock, Zap, CheckCircle2 } from 'lucide-react';
+import { TrendingUp, Calendar, PieChart, AlertTriangle, BookOpen, Clock, Zap, CheckCircle2 } from 'lucide-react';
 
 const Projections: React.FC = () => {
   return (
@@ -107,28 +107,33 @@ const Projections: React.FC = () => {
         </div>
       </section>
 
-      {/* Calculator Notice */}
-      <div className="bg-indigo-500/10 border border-indigo-500/20 p-10 rounded-[3rem] relative overflow-hidden group">
-         <div className="absolute -right-4 -bottom-4 opacity-5 transform rotate-12 group-hover:scale-110 transition-transform">
-            <PieChart size={240} />
-         </div>
-         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-6">
-               <h3 className="text-3xl font-black text-white">Dynamic Calculations</h3>
-               <p className="text-sm text-indigo-100/60 leading-relaxed">
-                 While these tables provide static benchmarks, the real-world network is dynamic. Use our interactive calculator to adjust variables like commission, self-stake, and voter behavior.
-               </p>
-               <div className="p-4 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex items-start space-x-3">
+      {/* Profit Calculator Tools Section */}
+      <section className="space-y-8">
+        <div className="flex items-center space-x-3 text-white">
+          <PieChart className="text-indigo-400" />
+          <h3 className="text-2xl font-bold">Profit Calculator Tools</h3>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-6">
+            <p className="text-gray-400 text-sm leading-relaxed">
+              You can use profit calculator tools provided by our delegates to estimate your annual profit based on real-time network conditions.
+            </p>
+            <div className="bg-amber-500/10 border border-amber-500/20 p-6 rounded-3xl relative overflow-hidden group">
+               <div className="flex items-start space-x-3">
                   <AlertTriangle size={18} className="text-amber-500 shrink-0 mt-0.5" />
-                  <p className="text-[11px] text-amber-200/60 italic leading-relaxed">
-                    Estimates from these tools are based on assumptions - please do your own analysis. Returns are subject to network participation.
-                  </p>
+                  <div className="space-y-1">
+                    <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest">Warning</h4>
+                    <p className="text-[11px] text-amber-200/60 italic leading-relaxed">
+                      Estimates from these tools are based on assumptions - please do your own analysis.
+                    </p>
+                  </div>
                </div>
             </div>
-            <div className="bg-black/40 border border-white/5 rounded-[2rem] p-8 space-y-4">
+            <div className="bg-[#14191f] border border-white/5 rounded-2xl p-6 space-y-4">
                <h4 className="text-sm font-bold text-white flex items-center space-x-2">
                  <Zap size={16} className="text-yellow-400" />
-                 <span>Profit Tool Highlights</span>
+                 <span>Tool Capabilities</span>
                </h4>
                <ul className="space-y-3">
                   {[
@@ -137,15 +142,26 @@ const Projections: React.FC = () => {
                     "Project yield for your unique community."
                   ].map((item, i) => (
                     <li key={i} className="flex items-center space-x-2 text-xs text-gray-400">
-                       {/* Fix: Added CheckCircle2 to imports above */}
                        <CheckCircle2 size={14} className="text-emerald-500" />
                        <span>{item}</span>
                     </li>
                   ))}
                </ul>
             </div>
-         </div>
-      </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute inset-0 bg-indigo-500/5 blur-[80px] rounded-full opacity-50"></div>
+            <div className="relative bg-[#0b0e11] border border-white/10 rounded-[2.5rem] p-4 shadow-2xl">
+               <img 
+                 src="https://1634134081-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F5whGkGlpM5BFduENPztv%2Fuploads%2FaL0AJgP1plxl1s96hLUy%2Fimage.png?alt=media&token=9407d4aa-a28e-4525-a7ba-854dce1cd506" 
+                 alt="Profit Calculator Tool Preview" 
+                 className="w-full h-auto rounded-xl opacity-80 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0 duration-500"
+               />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Glossary Section */}
       <section className="p-10 bg-[#14191f] border border-white/5 rounded-[3rem] space-y-8">
@@ -157,7 +173,7 @@ const Projections: React.FC = () => {
             <div className="space-y-4">
                <h4 className="text-xl font-black text-white">Epoch</h4>
                <p className="text-sm text-gray-400 leading-relaxed">
-                 In IoTeX, transactions verification and consensus happen in <strong>epochs</strong>. One IoTeX epoch is completed every time 720 blocks get added to the blockchain.
+                 In IoTeX, transactions verification and consensus happen in <strong>epochs</strong>. One IoTeX epoch is completed every time 720 blocks get added to the blockchain. Because IoTeX features a 5-second block time, one IoTeX epoch lasts roughly <strong>1 hour</strong>.
                </p>
                <div className="flex items-center space-x-3 p-4 bg-black/20 rounded-2xl border border-white/5 w-fit">
                   <Clock size={16} className="text-indigo-400" />
