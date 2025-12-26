@@ -1,0 +1,13 @@
+domain: iotex-api
+descriptors:
+  - key: remote_address
+    rate_limit:
+      unit: second
+      requests_per_unit: 20
+---
+domain: iotex-stats
+descriptors:
+  - key: remote_address
+    rate_limit:
+      unit: second
+      requests_per_unit: 20
