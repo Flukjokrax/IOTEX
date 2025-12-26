@@ -179,7 +179,7 @@ const Projections: React.FC = () => {
                   <Clock size={16} className="text-indigo-400" />
                   <span className="text-xs font-bold text-indigo-100/70">5s Block Time ≈ 1 Hour Epoch</span>
                </div>
-            </div>
+            </div> 
             <div className="space-y-4">
                <h4 className="text-xl font-black text-white">Consensus Randomness</h4>
                <p className="text-sm text-gray-400 leading-relaxed">
